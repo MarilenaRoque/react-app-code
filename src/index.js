@@ -67,7 +67,11 @@ const Book = (props) => {
     console.log(e.target);
   }
   return (
-    <article className="book">
+    <article className="book" onMouseOver ={(e) => {
+        const object = e.target;
+        object.style.backgroundColor = "#d1d1d1";
+    }
+    }>
       <img alt="The Deep End" src={image} height="200" width="200"></img>
       <h1 onClick={clickHandler}>{title}</h1>
       {children}
