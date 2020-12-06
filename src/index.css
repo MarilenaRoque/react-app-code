@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #f1f5f8;
+    color: #222;
+}
+
+.bookList{
+    width: 99vw;
+    max-width: 1170px;
+    margin: 5rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.book{
+   background: #fff;
+   border-radius: 1rem;
+   padding: 1rem 2rem;
+}
+
+.book p {
+    margin: 10px 2px;
+}
+
+.book h1 {
+    margin-top: 0.5rem;
+}
+
+@media screen and ( min-width: 768px) {
+    .bookList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
