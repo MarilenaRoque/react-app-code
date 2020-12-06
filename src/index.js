@@ -52,9 +52,8 @@ const BookList = () => {
   return (
     <section className="bookList">
         {books.map((book)=> {
-          const {image, author, title, id} = book;
           return(
-           <Book key={id} {...book}></Book>
+           <Book key={book.id} {...book}></Book>
           )
         })}
     </section>
@@ -63,13 +62,14 @@ const BookList = () => {
 
 const Book = (props) => {
   const { title, image, author, children} = props;
-  const clickHandler = (author) => {
-    alert(author);
+  const clickHandler = (e) => {
+    console.log(e);
+    console.log(e.target);
   }
   return (
     <article className="book">
       <img alt="The Deep End" src={image} height="200" width="200"></img>
-      <h1 onClick={() => clickHandler(author)}>{title}</h1>
+      <h1 onClick={clickHandler}>{title}</h1>
       {children}
       <h4 style={{ color: "#617d98", fontSize: "0.75rem" }}>{author}</h4>
     </article>
