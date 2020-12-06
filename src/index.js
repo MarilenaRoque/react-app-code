@@ -63,13 +63,13 @@ const BookList = () => {
 
 const Book = (props) => {
   const { title, image, author, children} = props;
-  const clickHandler = () => {
-    alert("Don't Click!");
+  const clickHandler = (author) => {
+    alert(author);
   }
   return (
     <article className="book">
       <img alt="The Deep End" src={image} height="200" width="200"></img>
-      <h1 onClick={clickHandler}>{title}</h1>
+      <h1 onClick={() => clickHandler(author)}>{title}</h1>
       {children}
       <h4 style={{ color: "#617d98", fontSize: "0.75rem" }}>{author}</h4>
     </article>
